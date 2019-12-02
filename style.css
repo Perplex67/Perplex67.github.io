@@ -93,6 +93,18 @@
     text-align: center;
 }
 
+.other-link {
+    color: #ffa502;
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+.other-link:hover {
+    color: rgb(45, 100, 185);
+    opacity: 1;
+    text-decoration: none;
+}
+
 .downloads:hover {
     box-shadow: 0 5px 20px black;
     opacity: 1;
