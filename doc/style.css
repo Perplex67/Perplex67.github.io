@@ -1,0 +1,50 @@
+* {
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.link {
+    margin-left: 30px;
+    font-size: 30px;
+
+    color: #ffa502;
+    transition: 0.3s;
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+
+    margin-bottom: 10px;
+    padding-bottom: 25px;
+    padding-top: 40px;
+
+    display: none;
+}
+
+.menu {
+    background-color: rgb(45, 45, 50);
+
+    padding: 10px;
+    padding-bottom: 40px;
+}
+
+.document {
+    margin-left: 30px;
+    display: block;
+}
+
+.link:hover {
+    color: rgb(45, 100, 185);
+    text-decoration: none;
+}
