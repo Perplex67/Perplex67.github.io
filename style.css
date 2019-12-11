@@ -29,6 +29,10 @@
     color: rgb(145, 175, 220);
 }
 
+.alert-link:hover {
+    text-decoration: none;
+}
+
 .donwloads-center {
     text-align: center;
 }
