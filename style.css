@@ -88,12 +88,10 @@
 }
 
 .other-link {
-    color: #ffa502;
     transition: 0.3s;
 }
 
 .other-link:hover {
-    color: rgb(45, 100, 185);
     text-decoration: none;
 }
 
@@ -112,6 +110,5 @@
 }
 
 .other-link:visited{
-    color: #ffa502;
     text-decoration: none;
 }

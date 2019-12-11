@@ -1,5 +1,5 @@
 * {
-    font-family: 'Segoe UI';
+    font-family: 思源黑体;
     margin: 0;
     padding: 0;
 }
@@ -13,10 +13,10 @@ p {
 }
 
 .link {
-    margin-left: 30px;
+    display: block;
+    margin-left: 27px;
+    margin-bottom: 30px;
     font-size: 30px;
-
-    color: #ffa502;
     transition: 0.3s;
 }
 
@@ -37,6 +37,14 @@ p {
     display: none;
 }
 
+.code-title {
+    margin-bottom: 30px;
+}
+
+.code {
+    margin-left: 2px;
+}
+
 .menu {
     background-color: rgb(45, 45, 50);
 
@@ -51,6 +59,5 @@ p {
 }
 
 .link:hover {
-    color: rgb(45, 100, 185);
     text-decoration: none;
 }
