@@ -17,6 +17,13 @@
     display: none;
 }
 
+.none {
+    margin-left: 50px;
+    font-size: 15px;
+
+    color: red;
+}
+
 .menu {
     background-color: rgb(45, 45, 50);
 
