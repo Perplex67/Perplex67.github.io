@@ -62,6 +62,7 @@ p {
 .document {
     padding-left: 30px;
     padding-bottom: 10px;
+    padding-right: 30px;
 }
 
 .link:hover {
