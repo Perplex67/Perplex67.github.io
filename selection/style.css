@@ -1,12 +1,57 @@
 * {
     font-family: 思源黑体;
-    
+
     padding: 0;
     margin: 0;
 }
 
+.downloads {
+    border: none;
+
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    text-align: center;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+    opacity: 0.9;
+
+    display: block;
+    margin: auto;
+
+    padding: 10px;
+    width: 300px;
+
+}
+
+.downloads a {
+    color: #fff;
+}
+
+.downloads a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.downloads a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
 .menu {
-    background-color: rgb(45, 45, 50);
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     padding: 10px;
     padding-top: 40px;
@@ -15,7 +60,7 @@
 
 .title {
     color: white;
-    
+
     font-size: 50px;
     text-align: center;
 
@@ -77,6 +122,12 @@ span {
     color: black;
 }
 
-.link:hover, .file-link:hover {
+.link:hover,
+.file-link:hover {
     text-decoration: none;
+}
+
+.downloads:hover {
+    box-shadow: 0 5px 20px black;
+    opacity: 1;
 }

@@ -46,12 +46,18 @@ body {
 .email {
     display: block;
     text-align: center;
-    margin-top: 700px;
+    margin-top: 70px;
     font-size: 30px;
 }
 
 .email:hover{
     text-decoration: none;
+}
+
+.hr {
+    margin-top: 650px;
+    background: rgb(245, 245, 245);
+    height: 5px;
 }
 
 .cmt {
