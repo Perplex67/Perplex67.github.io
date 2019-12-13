@@ -49,14 +49,8 @@ body {
     font-size: 30px;
 }
 
-.email:hover{
+.email:hover {
     text-decoration: none;
-}
-
-.hr {
-    margin-top: 650px;
-    background: rgb(245, 245, 245);
-    height: 5px;
 }
 
 .cmt {
