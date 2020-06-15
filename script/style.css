@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.page {
+    margin: 20px;
+}
+
+.string {
+    font-size: 17px;
+    padding-top: 20px;
+}
