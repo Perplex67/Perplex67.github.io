@@ -1,64 +1,100 @@
-# time                          -       猜数字时间上限
-# guess_number                  -       你猜的数字
-# lower_limit_guess_number      -       数字的下限
-# upper_limit_guess_number      -       数字的上限
-# set_maximum_time              -       是否设置猜数字的次数上限
-# maximum_guess_time            -       猜数字的次数上限
-# number                        -       要猜的数字
-# tell_player_number            -       告诉玩家数字答案
-# replay                        -       重新游玩
+# filename                          -    文件名称
+# username_have_chinese             -    检查用户名是否存在中文
+# set_maximum_guess_time_break      -    退出设置上限的布尔值
+# time                              -    猜数字的次数
+# guess_number                      -    输入的数字
+# lower_limit_guess_number          -    下限
+# upper_limit_guess_number          -    上限
+# set_maximum_time                  -    是否设置次数上限
+# maximum_guess_time                -    次数上限
+# number                            -    要猜的数字
+# tell_player_number                -    是否告诉玩家答案
+# replay                            -    是否重新游玩
 
-# 从 random 库导入 randint 函数，这是一个随机数的函数
+# 从 os 库导入 system 函数，用于调用cmd
+from os import system
+# 从 random 库导入 randint 函数，用于生成随机数
 from random import randint
+# 导入 json 库，用于储存数据
+import json
+# 导入 os 库，用于使用 cmd 命令
+import os
+
+# 为 cmd 窗口调色
+os.system('color a')
+
+filename = 'data.json'
+username_have_chinese = ''
+
+# 使用 json 文件储存用户名
+try:
+    # 读取文件
+    with open(filename) as f_obj:
+        username = json.load(f_obj)
+        print('欢迎回来，' + str(username) + '!\n')
+
+except:
+    print('请输入用户名')
+    username = input('> ')
+    print('\n')
+
+    while True:
+        # 检查用户名是否含有中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)
+        for i in username:
+            if u'\u4e00' <= i <= u'\u9fff':
+                username_have_chinese = True
+
+            else:
+                username_have_chinese = False
+
+        if username_have_chinese:
+            print('无法包含中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)\n')
+            print('请输入用户名')
+            username = input('> ')
+            print('\n')
+
+        else:
+            # 写入文件
+            with open(filename, 'w') as f_obj:
+                json.dump(username, f_obj)
+                print('欢迎您，' + str(username) + '!\n')
+                break
 
 
 def play():
-    tell_player_number = 0
+    # 初始化局部变量
     time = 0
-    guess_number = 0
+    lower_limit_guess_number = 0
+    upper_limit_guess_number = 0
+    set_maximum_time = ''
+    maximum_guess_time = 0
+    number = 0
+    tell_player_number = ''
+    replay = ''
+    set_maximum_time_break = False
 
-    print("游戏开始!")
-    print('================================')
-
-    print("输入 q 来退出")
-    print('================================')
-
+    # 设置下限
     while True:
-        print("请输入要猜的数字的下限")
+        print("请输入下限")
         lower_limit_guess_number = input("> ")
-        print('================================')
+        print('\n')
 
         if lower_limit_guess_number == 'q':
             exit()
 
-        else:
-            # 判断玩家输入的是否是整数
-            try:
-                lower_limit_guess_number = int(lower_limit_guess_number)
+        # 判断玩家输入的是否是整数
+        try:
+            lower_limit_guess_number = int(lower_limit_guess_number)
+            break
 
-            except:
-                print("非法输入...")
+        except:
+            print("非法输入\n")
 
-                print('================================')
-
-            else:
-                if lower_limit_guess_number < 0:
-                    print("你输入的数字太小啦!!!")
-                    print('================================')
-
-                elif lower_limit_guess_number > 9999999:
-                    print("你输入的数字太大啦!!!")
-                    print('================================')
-
-                else:
-                    break
-
+    # 设置上限
     while True:
-        # 设置要猜的数字的上限
-        print("请输入要猜的数字的上限")
-
+        print("请输入上限")
         upper_limit_guess_number = input("> ")
-        print('================================')
+        print('\n')
 
         if upper_limit_guess_number == 'q':
             exit()
@@ -66,139 +102,111 @@ def play():
         # 判断玩家输入的是否是整数
         try:
             upper_limit_guess_number = int(upper_limit_guess_number)
+            break
 
         except:
-            print("非法输入...")
-            print('================================')
+            print("非法输入\n")
 
-        else:
-            if upper_limit_guess_number > 9999999:
-                print("你输入的数字太大啦!!!")
-                print('================================')
-
-            elif upper_limit_guess_number <= 0:
-                print("你输入的数字太小啦!!!")
-                print('================================')
-
-            else:
-                break
-
-# 如果要猜的数字的最小数大于或等于最大数, 就让玩家重新输入
+    # 如果下限大于或等于上限, 就让玩家重新输入
     if lower_limit_guess_number >= upper_limit_guess_number:
         while True:
             print("数字下限不能大于或等于数字上限")
-
-            print("重新输入要猜的数字的下限")
-            print('================================')
-
+            print("重新输入下限\n")
             lower_limit_guess_number = input("> ")
-            print('================================')
+            print('\n')
 
             if lower_limit_guess_number == 'q':
                 exit()
 
+            # 判断玩家输入的是否是整数
+            try:
+                lower_limit_guess_number = int(
+                    lower_limit_guess_number)
+
+            except:
+                print("非法输入\n")
+
             else:
-                # 判断玩家输入的是否是整数
+                print("重新输入上限")
+
+                upper_limit_guess_number = input("> ")
+                print('\n')
+
+                if upper_limit_guess_number == 'q':
+                    exit()
+
                 try:
-                    lower_limit_guess_number = int(
-                        lower_limit_guess_number)
+                    upper_limit_guess_number = int(
+                        upper_limit_guess_number)
 
                 except:
-                    print("非法输入...")
-                    print('================================')
+                    print("非法输入\n")
 
                 else:
-                    if lower_limit_guess_number < 0:
-                        print("你输入的数字太小啦!!!")
-                        print('================================')
-
-                    elif lower_limit_guess_number > 9999999:
-                        print("你输入的数字太大啦!!!")
-                        print('================================')
-
-                    else:
-                        print("重新输入要猜的数字的下限")
-
-                        upper_limit_guess_number = input("> ")
-                        print('================================')
-
-                        if upper_limit_guess_number == 'q':
-                            exit()
-
-                        try:
-                            upper_limit_guess_number = int(
-                                upper_limit_guess_number)
-
-                        except:
-                            print("非法输入")
-                            print('================================')
-
-                        else:
-                            if upper_limit_guess_number >= 9999999:
-                                print("你输入的数字太大啦!!!")
-                                print('================================')
-
-                            elif lower_limit_guess_number < upper_limit_guess_number:
-                                break
-
-                            else:
-                                pass
+                    if lower_limit_guess_number < upper_limit_guess_number:
+                        break
 
     while True:
-        print("你是否想设置猜数字的次数上限?(y/n)")
+        print("你是否想设置次数上限?(y/n)")
         set_maximum_time = input("> ")
-        print('================================')
+        print('\n')
 
         if set_maximum_time == 'q':
             exit()
 
         if set_maximum_time == 'y':
-            print("请输入猜数字的次数上限")
+            print("请输入次数上限")
             maximum_guess_time = input("> ")
-            print('================================')
+            print('\n')
 
             if maximum_guess_time == 'q':
                 exit()
 
-            else:
-                # 判断玩家输入的是否是整数
-                try:
-                    maximum_guess_time = int(maximum_guess_time)
-
-                except:
-                    print("非法输入")
-                    print('================================')
-
-                else:
-                    if maximum_guess_time <= 0:
-                        print("你输入的数字太小啦!!!")
-                        print('================================')
-
-                    elif maximum_guess_time >= 999:
-                        print("你输入的数字太大啦!!!")
-                        print('================================')
-
-                    else:
-                        break
         elif set_maximum_time == 'n':
             break
 
         else:
-            print("非法输入")
-            print('================================')
+            set_maximum_time_break = False
+            print("非法输入\n")
 
-    # 从数字的下限和上限里随机挑选一个数
+        while set_maximum_time == 'y':
+            # 判断玩家输入的是否是整数
+            try:
+                maximum_guess_time = int(maximum_guess_time)
+                if int(maximum_guess_time) < 0:
+                    print('非法输入\n')
+                    print('请重新输入次数上限')
+                    maximum_guess_time = input('> ')
+                    print('\n')
+                else:
+                    set_maximum_time_break = True
+                    break
+
+            except:
+                print('非法输入\n')
+                print('请重新输入次数上限')
+                maximum_guess_time = input('> ')
+                print('\n')
+
+            if int(maximum_guess_time) < 0:
+                print('非法输入\n')
+                print('请重新输入次数上限')
+                maximum_guess_time = input('> ')
+                print('\n')
+
+        if set_maximum_time_break:
+            break
+
+    # 从下限和上限里随机挑选一个数
     number = randint(lower_limit_guess_number, upper_limit_guess_number)
 
-    # 告知要猜的数字的下限和要猜的数字的上限
+    # 告知下限和上限
     print("猜个数字(" + str(lower_limit_guess_number) +
-          "-" + str(upper_limit_guess_number) + ")")
-    print('================================')
+          " - " + str(upper_limit_guess_number) + ")\n")
 
-    # 如果玩家设置了猜数字的次数上限, 就告知玩家
+    # 如果玩家设置了次数上限, 就告知玩家
     if set_maximum_time == 'y':
-        print("你可以猜 " + str(maximum_guess_time) + " 次.")
-        print('================================')
+        print("你可以猜 " + str(maximum_guess_time) + " 次\n")
 
     while True:
         if tell_player_number == 'y':
@@ -206,92 +214,86 @@ def play():
 
         if tell_player_number == 'n':
             print("猜个数字(" + str(lower_limit_guess_number) +
-                  "-" + str(upper_limit_guess_number) + ")")
-            print('================================')
+                  " - " + str(upper_limit_guess_number) + ")\n")
 
-        # 如果玩家设置了猜数字的次数上限, 就用设置上限的版本
+        # 如果玩家设置了次数上限, 就用设置上限的版本
         if set_maximum_time == 'y':
             if time < maximum_guess_time:
                 guess_number = input("> ")
-                print('================================')
+                print('\n')
 
                 if guess_number == 'q':
                     break
 
-                else:
-                    # 判断玩家输入的是否是整数
-                    try:
-                        guess_number = int(guess_number)
+                # 判断玩家输入的是否是整数
+                try:
+                    guess_number = int(guess_number)
 
-                    except:
-                        print("非法输入")
-                        print('================================')
+                except:
+                    print("非法输入\n")
+                    print("猜个数字(" + str(lower_limit_guess_number) +
+                          " - " + str(upper_limit_guess_number) + ")\n")
+
+                else:
+                    # 判断玩家输入的数字是否超过了玩家定义的上限
+                    if guess_number > upper_limit_guess_number:
+                        print("你输入的数字不能大于 " +
+                              str(upper_limit_guess_number) + '\n')
+
+                    # 判断玩家输入的数字是否超过了玩家定义的下限
+                    elif guess_number < lower_limit_guess_number:
+                        print("你输入的数字不能小于" +
+                              str(lower_limit_guess_number) + '\n')
 
                     else:
-                        # 判断玩家输入的数字是否超过了玩家定义的数字上限
-                        if guess_number > upper_limit_guess_number:
-                            print("你输入的数字不能大于 " + str(upper_limit_guess_number))
-                            print('================================')
+                        time += 1
 
-                        # 判断玩家输入的数字是否超过了玩家定义的数字下限
-                        elif guess_number < lower_limit_guess_number:
-                            print("n你输入的数字不能小于" + str(lower_limit_guess_number))
-                            print("================================")
+                        if guess_number > number:
+                            print('太大了!!!\n')
+
+                        elif guess_number == number:
+                            print('正确!!!')
+                            print('你猜了 ' + str(time) + ' 次\n')
+                            break
 
                         else:
-                            time += 1
+                            print('太小了!!!\n')
 
-                            if guess_number > number:
-                                print('太大了!!!')
-                                print('================================')
+                        while time >= 10:
+                            print("你是否想知道最终答案?(y/n)")
+                            tell_player_number = input("> ")
+                            print("\n")
 
-                            elif guess_number == number:
-                                print('正确!!!')
-                                print('你猜了 ' + str(time) + ' 次')
-                                print('================================')
+                            if tell_player_number == 'q':
+                                exit()
+
+                            if tell_player_number == 'y':
+                                print("最终答案是: " + str(number) + '\n')
                                 break
 
+                            elif tell_player_number == 'n':
+                                pass
+
                             else:
-                                print('太小了!!!')
-                                print('================================')
+                                print("非法输入\n")
 
-                            while time >= 10:
-                                print("你是否想知道最终答案?(y/n)")
-                                tell_player_number = input("> ")
-                                print("================================")
-
-                                if tell_player_number == 'q':
-                                    exit()
-
-                                if tell_player_number == 'y':
-                                    print("最终答案是: " + str(number))
-                                    print("================================")
-                                    break
-
-                                elif tell_player_number == 'n':
-                                    pass
-
-                                else:
-                                    print("非法输入")
-                                    print("================================")
-
-            # 超过了玩家设定的猜数字的次数上限, 就结束游戏, 并告知玩家输了
+            # 超过了玩家设定的次数上限, 就结束游戏, 并告知玩家输了
             else:
                 print("你输了!!!")
                 break
 
-        # 如果玩家没有设置猜数字的次数上限, 就用没有设置上限的版本
+        # 如果玩家没有设置次数上限, 就用没有设置上限的版本
         else:
             if tell_player_number == 'y':
                 break
 
             if tell_player_number == 'n':
                 print("猜个数字(" + str(lower_limit_guess_number) +
-                      "-" + str(upper_limit_guess_number) + ")")
-                print('================================')
+                      " - " + str(upper_limit_guess_number) + ")")
+                print('\n')
 
             guess_number = input("> ")
-            print('================================')
+            print('\n')
 
             if guess_number == 'q':
                 break
@@ -302,81 +304,71 @@ def play():
                     guess_number = int(guess_number)
 
                 except:
-                    print("非法输入")
-                    print('================================')
+                    print("非法输入\n")
 
                 else:
-                    # 判断玩家输入的数字是否超过了玩家定义的数字上限
+                    # 判断玩家输入的数字是否超过了玩家定义的上限
                     if guess_number > upper_limit_guess_number:
-                        print("你输入的数字不能大于 " + str(upper_limit_guess_number))
-                        print('================================')
+                        print("你输入的数字不能大于 " + str(upper_limit_guess_number) + '\n')
 
-                    # 判断玩家输入的数字是否超过了玩家定义的数字下限
+                    # 判断玩家输入的数字是否超过了玩家定义的下限
                     elif guess_number < lower_limit_guess_number:
-                        print("你输入的数字不能小于 " + str(lower_limit_guess_number))
-                        print("================================")
+                        print("你输入的数字不能小于 " + str(lower_limit_guess_number) + '\n')
 
                     else:
                         time += 1
 
                         if guess_number > number:
-                            print('太大了!!!')
-                            print('================================')
+                            print('太大了!!!\n')
 
                         elif guess_number == number:
-                            print('正确!!!')
-                            print('================================')
+                            print('正确!!!\n')
 
-                            print('你猜了 ' + str(time) + ' 次')
-                            print('================================')
+                            print('你猜了 ' + str(time) + ' 次\n')
 
                             break
 
                         else:
-                            print('太小了!!!')
-                            print('================================')
+                            print('太小了!!!\n')
 
-                        # 如果玩家猜的次数超过了 10 次
+                        # 如果玩家猜的次数超过了 10 次，询问玩家是否想要知道最终答案
                         while time >= 10:
-                            # 询问玩家是否想要知道最终答案
                             print("你是否想知道最终答案?(y/n)")
                             tell_player_number = input("> ")
-                            print("================================")
+                            print("\n")
 
                             if tell_player_number == 'q':
                                 exit()
 
                             # 告知玩家最终答案
                             if tell_player_number == 'y':
-                                print("最终答案是 " + str(number))
-                                print("================================")
+                                print('最终答案是 ' + str(number) + '\n')
                                 break
 
                             elif tell_player_number == 'n':
                                 break
 
                             else:
-                                print("非法输入")
-                                print("================================")
-
-    # 递归
+                                print("非法输入\n")
+    # 询问玩家是否想要重新游玩
     while True:
-        # 询问玩家是否想要重新游玩
         print("要不要再玩一次?(y/n)")
-
         replay = input("> ")
-        print('================================')
+        print('\n')
 
         if replay == 'y':
+            os.system('cls')
             play()
 
         elif replay == 'n':
+            print('再见，' + str(username) + '!\n')
             break
 
         else:
-            print("非法输入")
-            print('================================')
+            print("非法输入\n")
+            continue
+
+        break
 
 
-# 游玩游戏的代码被放到了一个函数里，也就是 play() 这个函数，里面用到了递归，指的是在函数里调用本身
 play()

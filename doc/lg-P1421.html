@@ -34,23 +34,23 @@
     </div>
 
     <div class="document">
-        <h2>题目描述</h2>
+        <p class="tle">题目描述</p>
         <p>
             伦敦奥运会要到了，小鱼在拼命练习游泳准备参加游泳比赛，可怜的小鱼并不知道鱼类是不能参加人类的奥运会的。这一天，小鱼给自己的游泳时间做了精确的计时（本题中的计时都按24小时制计算），它发现自己从a时b分一直游泳到当天的c时d分，请你帮小鱼计算一下，它这天一共游了多少时间呢？小鱼游的好辛苦呀，你可不要算错了哦。
         </p>
     </div>
     <div class="introduce-background document">
-        <h2>输入格式</h2>
+        <p class="tle">输入格式</p>
         <p>一行内输入 4 个整数，分别表示 a，b，c，d。</p>
     </div>
 
     <div class="document">
-        <h2>输出格式</h2>
+        <p class="tle">输出格式</p>
         <p>一行内输出 2 个整数 e 和 f，用空格间隔，依次表示小鱼这天一共游了多少小时多少分钟。其中表示分钟的整数 f 应该小于 60。</p>
     </div>
 
     <div class="introduce-background document">
-        <h2>输入输出样例</h2>
+        <p class="tle">输入输出样例</p>
         <h3>Input #1</h3>
         <p>12 50 19 10</p>
         <h3>Output #1</h3>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="document">
-        <h2 class="code-title">题解代码</h2>
+        <p class="tle">题解代码</p>
         <p class="code">t = input().split()<br /># 把按空格分隔的两个数储存在 t 里 (此时 t 为列表)<br /><br />s = int(t[0]) * 60 + int(t[1])<br />#
             计算开始时间的分钟数<br /><br />g = int(t[2]) * 60 + int(t[3])<br /># 计算结束时间的分钟数<br /><br />f = g - s<br />#
             结束时间与开始时间相差的分钟数<br /><br />j = f / 60<br />j = int(j)<br /># 根据 f 算出相差多少小时<br /><br />p = f % 60<br /># 取 f / 60

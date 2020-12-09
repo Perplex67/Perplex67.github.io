@@ -1,12 +1,11 @@
-body {
+* {
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
 
     background-color: #fff;
-}
 
-* {
-    font-family: 思源黑体;
+    letter-spacing: 1px;
 }
 
 .box {
@@ -32,6 +31,8 @@ body {
     width: 275px;
     margin: 10px;
     padding: 15px;
+
+    border-radius: 20px;
 }
 
 .pwd {
@@ -42,6 +43,8 @@ body {
     width: 275px;
     margin: 10px;
     padding: 15px;
+
+    border-radius: 20px;
 }
 
 .email {
@@ -53,6 +56,8 @@ body {
 
 .email:hover {
     text-decoration: none;
+    transition: 0.3s;
+    color: black;
 }
 
 .cmt {
@@ -64,6 +69,8 @@ body {
     width: 275px;
     margin: 10px;
     padding: 15px;
+
+    border-radius: 20px;
 }
 
 .go {
@@ -75,6 +82,8 @@ body {
 
     background-color: rgb(45, 100, 185);
     color: #fff;
+
+    border-radius: 50px;
 }
 
 .reset {
@@ -86,6 +95,8 @@ body {
 
     background-color: rgb(45, 100, 185);
     color: #fff;
+
+    border-radius: 50px;
 }
 
 .go:hover,
