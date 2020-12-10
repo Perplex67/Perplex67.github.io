@@ -5,43 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- 导入 css 文档 -->
     <link rel="stylesheet" href="./style.css">
-
-    <!-- 导入 Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- 导入 jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".title").fadeIn(500);
-        });
-    </script>
-
-    <title>Perplex67的博客</title>
+    <title>ST1NGR3Y 的博客</title>
 </head>
 
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="./index.html">首页</a></li>
-                <li><a href="./about/index.html">关于</a></li>
-                <li><a href="./contact/index.html">联系我</a></li>
-                <li><a href="./selection/index.html">精选代码</a></li>
+                <li class="active"><a class="labl" href="./index.html">首页</a></li>
+                <li><a class="labl" href="./about/index.html">关于</a></li>
+                <li><a class="labl" href="./selection/index.html">精选代码</a></li>
+                <li><a class="labl" href="./nothing/index.html">没什么</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="menu">
-        <p class="title">Perplex67的博客</p>
+        <p class="title">ST1NGR3Y 的博客</p>
     </div>
 
     <div class="introduce">
         <div class="function">
-            <p>Python, HTML, CSS, JavaScript, Vue.js(learning)</p>
+            <p>Python, HTML, CSS, JavaScript, Vue.js(ALL learning)</p>
         </div>
     </div>
 
@@ -51,15 +39,23 @@
 
     <div class="doc-background">
         <button class="doc-btn background1">
-            <a class="link" href="./doc/lg-P1421.html" target="_blank" style="color: #fff;">洛谷 - P1421 题解</a>
-            <p class="introduce-text">班主任给小玉一个任务，到文具店里买尽量多的签字笔。已知一只签字笔的价格是1元9角，而班主任给小玉的钱是a元b角，小玉想知道，她最多能买多少只签字笔呢。</p>
+            <a class="link" href="./doc/lg-P1425.html" target="_blank">洛谷 - P1425 题解</a>
+            <p class="introduce-text">伦敦奥运会要到了，小鱼在拼命练习游泳准备参加游泳比赛，可怜的小鱼并不知道鱼类是不能参加人类的奥运会的。</p>
         </button>
     </div>
 
     <div class="doc-background">
         <button class="doc-btn background2">
-            <a class="link" target="_blank" style="color: #fff;">友链</a>
-            <a href="https://www.oo0v0oo.com/" class="other-link introduce-text" target="_blank">这是个大佬，一定要看！！！</a>
+            <a class="link" href="https://www.oo0v0oo.com/" target="_blank">友链</a>
+            <p class="introduce-text">这是个大佬，一定要看！！！</p>
         </button>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".title").fadeIn(1000);
+        });
+    </script>
 </body>
+
+</html>

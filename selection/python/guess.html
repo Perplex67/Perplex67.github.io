@@ -5,122 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>guess.py | 代码精选 - Perplex67的博客</title>
-
-    <!-- 导入 css 文档 -->
+    <title>guess.py | 代码精选 - ST1NGR3Y 的博客</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../special-style.css">
-
-    <!-- 导入 Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    
-
     <div class="introduce">代码展示</div>
 
-    <p class="code">    
-    # 从 os 库导入 system 函数，用于调用cmd
-    from os import system
-    # 从 random 库导入 randint 函数，用于生成随机数
-    from random import randint
-    # 导入 json 库，用于储存数据
-    import json
-    # 导入 os 库，用于使用 cmd 命令
-    import os
+    <p class="code">
+        # 从 os 库导入 system 函数，用于调用cmd
+        from os import system
+        # 从 random 库导入 randint 函数，用于生成随机数
+        from random import randint
+        # 导入 json 库，用于储存数据
+        import json
+        # 导入 os 库，用于使用 cmd 命令
+        import os
 
-    # 为 cmd 窗口调色
-    os.system('color a')
+        # 为 cmd 窗口调色
+        os.system('color a')
 
-    filename = 'data.json'
-    username_have_chinese = ''
+        filename = 'data.json'
+        username_have_chinese = ''
 
-    # 使用 json 文件储存用户名
-    try:
+        # 使用 json 文件储存用户名
+        try:
         # 读取文件
         with open(filename) as f_obj:
-            username = json.load(f_obj)
-            print('欢迎回来，' + str(username) + '!\n')
+        username = json.load(f_obj)
+        print('欢迎回来，' + str(username) + '!\n')
 
-    except:
+        except:
         print('请输入用户名')
         username = input('> ')
         print('\n')
 
         while True:
-            # 检查用户名是否含有中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)
-            for i in username:
-                if u'\u4e00' <= i <= u'\u9fff':
-                    username_have_chinese = True
-
-                else:
-                    username_have_chinese = False
-
-            if username_have_chinese:
-                print('无法包含中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)\n')
-                print('请输入用户名')
-                username = input('> ')
-                print('\n')
+        # 检查用户名是否含有中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)
+        for i in username:
+        if u'\u4e00' <= i <=u'\u9fff': username_have_chinese=True else: username_have_chinese=False if
+            username_have_chinese: print('无法包含中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)\n')
+            print('请输入用户名') username=input('> ')
+            print('\n')
 
             else:
-                # 写入文件
-                with open(filename, 'w') as f_obj:
-                    json.dump(username, f_obj)
-                    print('欢迎您，' + str(username) + '!\n')
-                    break
+            # 写入文件
+            with open(filename, 'w') as f_obj:
+            json.dump(username, f_obj)
+            print('欢迎您，' + str(username) + '!\n')
+            break
 
 
-    def play():
-        # 初始化局部变量
-        time = 0
-        lower_limit_guess_number = 0
-        upper_limit_guess_number = 0
-        set_maximum_time = ''
-        maximum_guess_time = 0
-        number = 0
-        tell_player_number = ''
-        replay = ''
-        set_maximum_time_break = False
+            def play():
+            # 初始化局部变量
+            time = 0
+            lower_limit_guess_number = 0
+            upper_limit_guess_number = 0
+            set_maximum_time = ''
+            maximum_guess_time = 0
+            number = 0
+            tell_player_number = ''
+            replay = ''
+            set_maximum_time_break = False
 
-        # 设置下限
-        while True:
+            # 设置下限
+            while True:
             print("请输入下限")
             lower_limit_guess_number = input("> ")
             print('\n')
 
             if lower_limit_guess_number == 'q':
-                exit()
+            exit()
 
             # 判断玩家输入的是否是整数
             try:
-                lower_limit_guess_number = int(lower_limit_guess_number)
-                break
+            lower_limit_guess_number = int(lower_limit_guess_number)
+            break
 
             except:
-                print("非法输入\n")
+            print("非法输入\n")
 
-        # 设置上限
-        while True:
+            # 设置上限
+            while True:
             print("请输入上限")
             upper_limit_guess_number = input("> ")
             print('\n')
 
             if upper_limit_guess_number == 'q':
-                exit()
+            exit()
 
             # 判断玩家输入的是否是整数
             try:
-                upper_limit_guess_number = int(upper_limit_guess_number)
-                break
+            upper_limit_guess_number = int(upper_limit_guess_number)
+            break
 
             except:
-                print("非法输入\n")
-                
-        (省略后部分内容)
+            print("非法输入\n")
+
+            (省略后部分内容)
     </p>
-    
+
     <div class="donwload-center">
         <button class="downloads"><a href="./guess/guess.py" download="guess.py">下载源码</a></button>
     </div>

@@ -1,8 +1,11 @@
 * {
     font-family: sans-serif;
-    padding: 0;
     margin: 0;
     letter-spacing: 1px;
+}
+
+.labl {
+    transition: all 0.3s linear;
 }
 
 .downloads {
@@ -26,16 +29,6 @@
     color: #fff;
 }
 
-.downloads a:hover {
-    text-decoration: none;
-    color: #fff;
-}
-
-.downloads a:visited {
-    text-decoration: none;
-    color: #fff;
-}
-
 .introduce {
     font-weight: 1000;
     font-size: 50px;
@@ -44,43 +37,44 @@
 
 .menu {
     background: linear-gradient(to right, #f5af19, #f12711);
-    padding: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 0 40px 0;
 }
 
 .title {
-    color: white;
+    color: #fff;
     font-size: 50px;
+    font-weight: 300;
     text-align: center;
     margin-bottom: 10px;
-    padding-bottom: 25px;
-    padding-top: 40px;
+    padding: 40px 0 25px 0;
     display: none;
 }
 
 .introduce-background {
     background-color: rgb(245, 245, 245);
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 20px 0 30px 0;
 }
 
 .links {
     display: block;
-    margin-left: 30px;
-    margin-top: 20px;
+    margin: 20px 0 20px -30px;
 }
 
 .link {
     transition: 0.3s;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.dot {
+    list-style-type: none;
 }
 
 .file-link {
     display: block;
-    font-size: 20px;
-    margin-left: 13px;
-    transition: 0.3s;
+    font-size: 23px;
+    margin: 10px;
+    transition: all 0.3s linear;
 }
 
 .code {
@@ -94,17 +88,11 @@
 
 .subtitle {
     display: block;
-    margin-left: 10px;
+    padding-left: 10px;
 }
 
 .alarm {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-span {
-    font-size: 15px;
-    color: black;
+    margin: 30px 0 30px 0;
 }
 
 .link:hover,
@@ -113,6 +101,16 @@ span {
 }
 
 .downloads:hover {
-    box-shadow: 0 5px 20px black;
+    box-shadow: 0 5px 4px -3px rgba(0, 0, 0, .3), 0 8px 14px 1px rgba(0, 0, 0, .2), 0 5px 19px 2px rgba(0, 0, 0, .2);
     opacity: 1;
+}
+
+.downloads a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.downloads a:visited {
+    text-decoration: none;
+    color: #fff;
 }

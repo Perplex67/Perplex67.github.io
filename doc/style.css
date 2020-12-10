@@ -1,27 +1,25 @@
 * {
     font-family: sans-serif;
     margin: 0;
-    padding: 0;
     letter-spacing: 1px;
 }
 
 .tle {
     font-weight: 1000;
     font-size: 35px;
-    padding-top: 20px;
-    padding-bottom: 5px;
+    padding: 20px 0 5px 0;
 }
 
 p {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .link {
-    display: block;
-    margin-left: 27px;
-    margin-bottom: 30px;
+    display: inline;
+    margin: 10px 0 0 27px;
+    padding-bottom: 20px;
     font-size: 30px;
-    transition: 0.3s;
+    transition: all 0.3s linear;
 }
 
 .introduce-background {
@@ -47,23 +45,18 @@ p {
 }
 
 .menu {
-    background: #f12711;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #f5af19, #f12711);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 0 40px 0;
 }
 
 .document {
-    padding-left: 30px;
-    padding-bottom: 10px;
-    padding-right: 30px;
+    padding: 0 30px 10px 30px;
 }
 
 .link:hover {
     text-decoration: none;
+}
+
+.labl {
+    transition: all 0.3s linear;
 }
