@@ -36,12 +36,19 @@ p {
     display: none;
 }
 
+.document hr {
+    height: 3px;
+    background-color: #000;
+    margin: 30px 0 30px 0;
+}
+
 .code-title {
     margin-bottom: 30px;
 }
 
 .code {
     margin-left: 2px;
+    font-size: 17px;
 }
 
 .menu {

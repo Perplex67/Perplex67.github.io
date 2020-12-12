@@ -62,7 +62,7 @@
 }
 
 .background1 {
-    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    background: linear-gradient(135deg, #A6FFCB, #12D8FA, #1FA2FF);
     color: #fff;
     padding: 15px 20px 15px 0;
     margin-bottom: 20px;
@@ -75,10 +75,17 @@
     margin-bottom: 20px;
 }
 
+.background3 {
+    background: linear-gradient(315deg, #90d5ec, #fc575e);
+    color: #fff;
+    padding: 20px 0 20px 0;
+    margin-bottom: 20px;
+}
+
 .introduce-text {
     display: inline-block;
     text-align: left;
-    margin: 20px 50px 20px 50px;
+    margin: 20px 70px 20px 50px;
 }
 
 .function {
