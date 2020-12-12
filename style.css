@@ -18,7 +18,7 @@
     text-align: center;
     font-weight: 300;
     margin-bottom: 10px;
-    padding: 25px 0 40px 0;
+    padding: 25px 50px 40px 50px;
     display: none;
     margin: 10px;
 }
@@ -61,25 +61,29 @@
     padding: 20px;
 }
 
-.background1 {
-    background: linear-gradient(135deg, #A6FFCB, #12D8FA, #1FA2FF);
+.background1,
+.background2,
+.background3,
+.background4 {
     color: #fff;
     padding: 15px 20px 15px 0;
-    margin-bottom: 20px;
+    width: auto;
+}
+
+.background1 {
+    background: linear-gradient(135deg, #A6FFCB, #12D8FA, #1FA2FF);
 }
 
 .background2 {
     background: linear-gradient(to right, #ff9472, #f2709c);
-    color: #fff;
-    padding: 20px 0 20px 0;
-    margin-bottom: 20px;
 }
 
 .background3 {
     background: linear-gradient(315deg, #90d5ec, #fc575e);
-    color: #fff;
-    padding: 20px 0 20px 0;
-    margin-bottom: 20px;
+}
+
+.background4 {
+    background: linear-gradient(to left, #2a2a72, #009ffd);
 }
 
 .introduce-text {

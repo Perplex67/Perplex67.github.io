@@ -30,10 +30,10 @@ p {
     color: white;
     font-size: 50px;
     text-align: center;
-    margin-bottom: 10px;
-    padding-bottom: 25px;
-    padding-top: 40px;
+    margin: 0 50px 10px 50px;
+    padding: 40px 0 25px 0;
     display: none;
+    font-weight: 300;
 }
 
 .document hr {
