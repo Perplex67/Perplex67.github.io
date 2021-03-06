@@ -1,6 +1,7 @@
 * {
     font-family: sans-serif;
     margin: 0;
+    letter-spacing: 1px;
 }
 
 .labl {
@@ -39,7 +40,7 @@
 }
 
 .menu {
-    background: linear-gradient(to right, #f5af19, #f12711);
+    background: #3A3C49;
     padding: 40px 0 40px 0;
 }
 
@@ -58,19 +59,10 @@
     padding: 20px 0 30px 0;
 }
 
-.links {
-    display: block;
-    margin: 20px 0 20px -30px;
-}
-
 .link {
     transition: 0.3s;
     font-size: 30px;
     font-weight: 500;
-}
-
-.dot {
-    list-style-type: none;
 }
 
 .file-link {

@@ -1,30 +1,21 @@
-# filename                          -    文件名称
-# username_have_chinese             -    检查用户名是否存在中文
-# set_maximum_guess_time_break      -    退出设置上限的布尔值
-# time                              -    猜数字的次数
-# guess_number                      -    输入的数字
-# lower_limit_guess_number          -    下限
-# upper_limit_guess_number          -    上限
-# set_maximum_time                  -    是否设置次数上限
-# maximum_guess_time                -    次数上限
-# number                            -    要猜的数字
-# tell_player_number                -    是否告诉玩家答案
-# replay                            -    是否重新游玩
-
-# 从 os 库导入 system 函数，用于调用cmd
 from os import system
-# 从 random 库导入 randint 函数，用于生成随机数
 from random import randint
-# 导入 json 库，用于储存数据
 import json
-# 导入 os 库，用于使用 cmd 命令
 import os
 
-# 为 cmd 窗口调色
 os.system('color a')
 
 filename = 'data.json'
-username_have_chinese = ''
+username_have_chinese = False
+time = 0
+lower_limit_guess_number = 0
+upper_limit_guess_number = 0
+set_maximum_time = ''
+maximum_guess_time = 0
+number = 0
+tell_player_number = ''
+replay = ''
+set_maximum_time_break = False
 
 # 使用 json 文件储存用户名
 try:
@@ -48,7 +39,7 @@ except:
                 username_have_chinese = False
 
         if username_have_chinese:
-            print('无法包含中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)\n')
+            print('用户名无法包含中文(使用 encode 和 decode 函数编解码中文 (gbk) 时会遇到 json 无法支持这种编码的错误)\n')
             print('请输入用户名')
             username = input('> ')
             print('\n')
@@ -61,18 +52,8 @@ except:
                 break
 
 
-def play():
-    # 初始化局部变量
+while True:
     time = 0
-    lower_limit_guess_number = 0
-    upper_limit_guess_number = 0
-    set_maximum_time = ''
-    maximum_guess_time = 0
-    number = 0
-    tell_player_number = ''
-    replay = ''
-    set_maximum_time_break = False
-
     # 设置下限
     while True:
         print("请输入下限")
@@ -352,13 +333,13 @@ def play():
                                 print("非法输入\n")
     # 询问玩家是否想要重新游玩
     while True:
-        print("要不要再玩一次?(y/n)")
+        print("要不要再玩一次？(y/n)")
         replay = input("> ")
         print('\n')
 
         if replay == 'y':
             os.system('cls')
-            play()
+            break
 
         elif replay == 'n':
             print('再见，' + str(username) + '!\n')
@@ -370,5 +351,8 @@ def play():
 
         break
 
+    if replay == 'y':
+        continue
 
-play()
+    else:
+        break
