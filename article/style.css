@@ -4,14 +4,6 @@
     letter-spacing: 1px;
 }
 
-.other-link {
-    color: #fff;
-}
-
-.labl {
-    transition: all 0.3s linear;
-}
-
 .title {
     color: #fff;
     font-size: 50px;
@@ -23,10 +15,36 @@
     margin: 10px;
 }
 
+.text{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.intextp{
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 300;
+}
+
+.intexth2 {
+    padding-top: 20px;
+    font-size: 38px;
+    font-weight: 350;
+}
+
 .menu {
     background: #3A3C49;
     padding: 80px 10px 65px 0;
     margin-bottom:  20px;
+}
+
+.other-link {
+    color: #fff;
+}
+
+.labl {
+    transition: all 0.3s linear;
 }
 
 .doc-btn {
@@ -34,18 +52,6 @@
     padding: 20px;
     transition: all 0.2s linear;
     box-shadow: 0 3px 2px -1px rgba(0, 0, 0, .2), 0 2px 10px 0 rgba(0, 0, 0, .14), 0 1px 15px 0 rgba(0, 0, 0, .12);
-}
-
-.introduce {
-    margin: 20px 0 20px 0;
-    font-size: 25px;
-    text-align: center;
-}
-
-.introduce-title {
-    display: block;
-    margin: 0 0 25px 50px;
-    font-size: 35px;
 }
 
 .link {
@@ -62,23 +68,10 @@
     padding: 20px;
 }
 
-.background1,
-.background2,
-.background3,
 .background4 {
     color: #fff;
     padding: 15px 20px 15px 0;
     width: auto;
-}
-
-.background1 {
-    background: #3E93EF;
-}
-
-.background2 {
-    background: #FD5F00;
-}
-.background4 {
     background: #0F4C81;
 }
 
@@ -88,27 +81,9 @@
     margin: 20px 70px 20px 50px;
 }
 
-.function {
-    margin-bottom: 15px;
-}
-
-.other-link {
-    transition: 0.3s;
-}
-
-.link:hover,
-.other-link:hover {
+.link:hover {
     text-decoration: none;
     color: #fff;
-}
-
-.downloads:hover {
-    box-shadow: 0 5px 20px black;
-    opacity: 1;
-}
-
-.alert-link:hover {
-    text-decoration: none;
 }
 
 .doc-btn:hover {
