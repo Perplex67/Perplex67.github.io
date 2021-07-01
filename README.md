@@ -1,5 +1,5 @@
 # Perplex67.github.io
-My Blog.
-By Perplex67 / ST1NGR3Y
+My Blog
+By Perplex67 / ST1NGR3Y / Diederich
 Copyright 2021
-Email: sting114514@outlook.com
+Email: afk22019_@outlook.com

@@ -24,16 +24,17 @@
 }
 
 .menu {
-    background: #3A3C49;
+    background: rgb(95, 91, 96);
     padding: 80px 10px 65px 0;
     margin-bottom:  20px;
 }
 
 .doc-btn {
     border: none;
+    border-radius: 12px;
     padding: 20px;
     transition: all 0.2s linear;
-    box-shadow: 0 3px 2px -1px rgba(0, 0, 0, .2), 0 2px 10px 0 rgba(0, 0, 0, .14), 0 1px 15px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 3px 2px -1px rgba(0, 0, 0, .2), 0 4px 10px 0 rgba(0, 0, 0, .14), 0 1px 15px 0 rgba(0, 0, 0, .12);
 }
 
 .introduce {
@@ -72,14 +73,15 @@
 }
 
 .background1 {
-    background: #3E93EF;
+    background: rgb(82, 78, 74);
 }
 
 .background2 {
-    background: #FD5F00;
+    background: rgb(170, 86, 94);
 }
+
 .background4 {
-    background: #0F4C81;
+    background: rgb(49, 111, 146);
 }
 
 .introduce-text {
