@@ -18,8 +18,9 @@
                 <li class="active"><a class="labl" href="./index.html">首页</a></li>
                 <li><a class="labl" href="./about/index.html">关于</a></li>
                 <li><a class="labl" href="./selection/index.html">Codes</a></li>
-                <li><a class="labl" href="./article/index.html">文章</a></li>
+                <li><a class="labl" href="./article/index.html">日记</a></li>
                 <li><a class="labl" href="./nothing/index.html">Vue.js 测试</a></li>
+                <li><a class="labl" href="https://github.com/Perplex67" >我的 Github</a></li>
             </ul>
         </div>
     </nav>
@@ -28,26 +29,22 @@
         <p class="title">Diederich 的博客</p>
     </div>
 
-    <div class="alert alert-success" role="alert">
-        <a class="alert-link" href="https://github.com/Perplex67">我的 Github 链接</a>
-    </div>
-
     <div class="doc-background">
-        <button class="doc-btn background4">
+        <button class="doc-btn background1">
             <a class="link" href="./doc/lg-p5724.html">洛谷 - P5724 题解</a>
             <p class="introduce-text">给出 n 和 n 个整数，求这 n 个整数中的极差是什么。极差的意思是一组数中的最大值减去最小值的差。</p>
         </button>
     </div>
 
     <div class="doc-background">
-        <button class="doc-btn background1">
+        <button class="doc-btn background2">
             <a class="link" href="./doc/lg-P1425.html">洛谷 - P1425 题解</a>
             <p class="introduce-text">伦敦奥运会要到了，小鱼在拼命练习游泳准备参加游泳比赛，可怜的小鱼并不知道鱼类是不能参加人类的奥运会的。</p>
         </button>
     </div>
 
     <div class="doc-background">
-        <button class="doc-btn background2">
+        <button class="doc-btn background3">
             <a class="link" href="./doc/lg-P5711.html">洛谷 - P5711 题解</a>
             <p class="introduce-text">输入一个年份，判断这一年是否是闰年。</p>
         </button>
@@ -56,6 +53,7 @@
     <script>
         $(document).ready(function () {
             $(".title").fadeIn(1000);
+            $(".doc-btn").width($(document).innerWidth() - 40);
         });
     </script>
 </body>
