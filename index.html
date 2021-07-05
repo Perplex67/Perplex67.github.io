@@ -20,13 +20,20 @@
                 <li><a class="labl" href="./selection/index.html">Codes</a></li>
                 <li><a class="labl" href="./article/index.html">日记</a></li>
                 <li><a class="labl" href="./nothing/index.html">Vue.js 测试</a></li>
-                <li><a class="labl" href="https://github.com/Perplex67" >我的 Github</a></li>
+                <li><a class="labl" href="https://github.com/Perplex67">我的 Github</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="menu">
         <p class="title">Diederich 的博客</p>
+    </div>
+
+    <div class="doc-background">
+        <button class="doc-btn background4">
+            <a class="link" href="./doc/box.html">Box Model 讲解</a>
+            <p class="introduce-text">详细讲解 CSS 里的 Box Model，即 Margin, Padding, Content 以及 Border。</p>
+        </button>
     </div>
 
     <div class="doc-background">
@@ -52,9 +59,16 @@
 
     <script>
         $(document).ready(function () {
-            $(".title").fadeIn(1000);
             $(".doc-btn").width($(document).innerWidth() - 40);
         });
+    </script>
+
+    <script>
+        const title = document.querySelector('.title')
+        title.innerHTML = title.textContent.replace(/\S/g, "<span>$&</span>")
+        document.querySelectorAll('span').forEach((span, index) => {
+            span.style.setProperty('--delay', `${index * 0.1}s`)
+        })
     </script>
 </body>
 

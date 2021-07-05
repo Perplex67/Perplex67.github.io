@@ -45,6 +45,7 @@
 
 .doc-btn {
     border: none;
+    border-radius: 13px;
     transition: all 0.2s linear;
     box-shadow: 0 3px 2px -1px rgba(0, 0, 0, .2), 0 4px 10px 0 rgba(0, 0, 0, .14), 0 1px 15px 0 rgba(0, 0, 0, .12);
 }
