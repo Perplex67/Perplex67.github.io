@@ -33,3 +33,21 @@
 .labl {
     transition: all 0.3s linear;
 }
+
+span {
+    display: inline-block;
+    animation: .4s pop ease-in-out;
+    animation-delay: var(--delay);
+}
+
+@keyframes pop {
+
+    0%,
+    100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+}
